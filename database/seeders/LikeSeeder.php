@@ -17,5 +17,10 @@ class LikeSeeder extends Seeder
             "user_id"=>1,
             "meditation_id"=>1
         ]);
+
+        Like::create([
+            "user_id"=>1,
+            "meditation_id"=>1
+        ]);
     }
 }

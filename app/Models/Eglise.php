@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Eglise extends Model
 {
     use HasFactory;
+    protected $guarded = [];
 }

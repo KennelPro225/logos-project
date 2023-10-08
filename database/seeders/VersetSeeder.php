@@ -13,11 +13,17 @@ class VersetSeeder extends Seeder
      */
     public function run(): void
     {
-        Verset::create([
-            "bible_version" => "LSG",
-            "livre" => "jean",
-            "chapitre" => 1,
-            "debut_verset" => 1
-        ]);
+        // Verset::create([
+        //     "livre_id" => 1,
+        //     "chapitre" => 1,
+        //     "debut_verset" => 1
+        // ]);
+
+        // Verset::create([
+        //     "livre_id" => 1,
+        //     "chapitre" => 2,
+        //     "debut_verset" => 1,
+        //     "fin_verset" => 1,
+        // ]);
     }
 }

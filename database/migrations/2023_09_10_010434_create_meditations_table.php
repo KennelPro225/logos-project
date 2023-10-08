@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('texte');
             $table->string('image')->nullable();
             $table->foreignId('user_id')->constrained("users","id");
-            $table->foreignId("verset_id")->constrained("versets","id");
+            $table->foreignId("verset_id")->nullable()->constrained("versets","id");
             $table->timestamps();
         });
     }

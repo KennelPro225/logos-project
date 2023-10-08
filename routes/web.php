@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MeditationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,15 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::name("home")->group(function () {
-    Route::get('/', function () {
-        return view('index');
-    });
-    Route::get('/home', function () {
-        return view("index");
-    });
+// Route::name("home")->group(function () {
+//     Route::get('/', function () {
+//         return view('index');
+//     });
+//     Route::get('/home', function () {
+//         return view("index");
+//     });
+// });
+Route::controller(MeditationController::class)->name("home")->group(function () {
+    Route::get('/', 'index');
+    Route::get('/home', "index");
 });
-
 Route::get('/publish', function () {
     return view("form-publish");
 })->name("publish");

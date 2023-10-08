@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Meditation;
 use Illuminate\Http\Request;
 
 class MeditationController extends Controller
@@ -11,7 +12,18 @@ class MeditationController extends Controller
      */
     public function index()
     {
-        //
+        $data = Meditation::join("users", "meditations.user_id", "users.id")
+            ->join("versets", "meditations.verset_id", "versets.id")
+            ->select(
+                "meditations.*",
+                "versets.*",
+                "users.created_at as first_date",
+                "users.nom",
+                "users.prenoms",
+                "meditations.id as meditation_id"
+            )
+            ->get();
+        return view("index", ["datas" => $data]);
     }
 
     /**
